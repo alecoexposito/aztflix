@@ -169,7 +169,7 @@ export class VideosComponent implements OnInit {
       prerollSkipTimer: 5,
       midrollAD: true,
       midroll_mp4: this.uploadsUrl + 'ads/' + ads[1],
-      midrollAD_displayTime: '15:10',
+      midrollAD_displayTime: '5:00',
       midrollSkipTimer: 5,
     };
     return videoConfig;
