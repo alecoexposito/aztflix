@@ -11,7 +11,8 @@ declare var jQuery: any;
 export class ShowCarouselComponent implements OnInit {
 
   @Input() show: any;
-  imageUrl: string = environment.apiUrl + '/uploads/shows/';
+  uploadsUrl: string = environment.uploadsUrl;
+  imageUrl: string = this.uploadsUrl + 'shows/';
   @Output() clickedPlay: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(private sanitizer: DomSanitizer) { }

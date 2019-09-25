@@ -3,6 +3,7 @@ import {AztflixService, Chapter, Show} from '../services/aztflix.service';
 import {ActivatedRoute, ParamMap} from '@angular/router';
 import {config, Observable} from 'rxjs';
 import {switchMap} from 'rxjs/operators';
+import {environment} from '../../environments/environment';
 
 declare var jQuery: any;
 var videoPlayer;
@@ -23,6 +24,7 @@ export class VideosComponent implements OnInit {
   playlist: any = [];
   ads: any = [];
   currentIndex = 0;
+  uploadsUrl: string = environment.uploadsUrl;
 
   constructor(private service: AztflixService, private route: ActivatedRoute) {
   }
@@ -160,13 +162,13 @@ export class VideosComponent implements OnInit {
       title: 'Capitulo ' + chapter.number,
       description: chapter.title,
       info: chapter.title,
-      mp4SD: 'assets/uploads/videos/' + chapter.path,
-      thumbImg: 'assets/uploads/shows/' + show.image,
+      mp4SD: this.uploadsUrl + 'videos/' + chapter.path,
+      thumbImg: this.uploadsUrl + 'shows/' + show.image,
       prerollAD: true,
-      preroll_mp4: 'assets/uploads/ads/' + ads[0],
+      preroll_mp4: this.uploadsUrl + 'ads/' + ads[0],
       prerollSkipTimer: 5,
       midrollAD: true,
-      midroll_mp4: 'assets/uploads/ads/' + ads[1],
+      midroll_mp4: this.uploadsUrl + 'ads/' + ads[1],
       midrollAD_displayTime: '15:10',
       midrollSkipTimer: 5,
     };

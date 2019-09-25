@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {environment} from '../../environments/environment';
 declare var jQuery: any;
 
 @Component({
@@ -8,6 +9,7 @@ declare var jQuery: any;
 })
 export class VideoTestComponent implements OnInit {
 
+  uploadsUrl: string = environment.uploadsUrl;
   constructor() { }
 
   ngOnInit() {
@@ -16,11 +18,11 @@ export class VideoTestComponent implements OnInit {
         videoType: 'HTML5',
         title: 'Capitulo 1',
         description: 'Bla bla bla',
-        mp4SD: 'assets/uploads/videos/888777744444.mp4',
+        mp4SD: this.uploadsUrl + 'videos/888777744444.mp4',
         prerollAD: true,
-        preroll_mp4: 'assets/uploads/ads/9854787545.mp4',
+        preroll_mp4: this.uploadsUrl + 'ads/9854787545.mp4',
         prerollSkipTimer: 5,
-        thumbImg: 'assets/uploads/shows/24234234.jpg'
+        thumbImg: this.uploadsUrl + 'shows/24234234.jpg'
       }],
       // playlist: "Off"
     });
