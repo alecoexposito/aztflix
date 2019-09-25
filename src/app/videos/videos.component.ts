@@ -45,7 +45,7 @@ export class VideosComponent implements OnInit {
     );
     this.channelObs$.subscribe((data: any) => {
         jQuery('#video-id').html('');
-      jQuery('#video-show').hide();
+        jQuery('#video-show').hide();
         const channel = data.data;
         for (let i = 0; i < channel.shows.length; i++) {
           channel.shows[i].chapters = this.orderChaptersByNumber(channel.shows[i]);
