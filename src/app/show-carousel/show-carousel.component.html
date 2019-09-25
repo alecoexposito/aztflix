@@ -1,0 +1,97 @@
+<!--<h6>{{show.name}}</h6>-->
+<!--<div class="main-carousel">-->
+  <!--<div class="carousel-cell">-->
+    <!--<div class="carousel-tile" [style.background-image]="getSanitizedImageUrl()" [style.background-size]="contains">-->
+      <!--<span class="tile-title card-title text-white font-weight-bold ml-1">Capitulo 1</span>-->
+      <!--<div class="tile-play" style="display: none;">-->
+        <!--<button class="btn btn-outline-primary play-btn"><i class="fa fa-play"></i> Play</button>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="carousel-cell">-->
+    <!--<div class="carousel-tile" style="background-image: url('img/movies/1.jpg'); background-size: contain">-->
+      <!--<span class="tile-title card-title text-white font-weight-bold ml-1">Capitulo 1</span>-->
+      <!--<div class="tile-play" style="display: none;">-->
+        <!--<button class="btn btn-outline-primary play-btn"><i class="fa fa-play"></i> Play</button>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="carousel-cell">-->
+    <!--<div class="carousel-tile" style="background-image: url('img/movies/1.jpg'); background-size: contain">-->
+      <!--<span class="tile-title card-title text-white font-weight-bold ml-1">Capitulo 1</span>-->
+      <!--<div class="tile-play" style="display: none;">-->
+        <!--<button class="btn btn-outline-primary play-btn"><i class="fa fa-play"></i> Play</button>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="carousel-cell">-->
+    <!--<div class="carousel-tile" style="background-image: url('img/movies/1.jpg'); background-size: contain">-->
+      <!--<span class="tile-title card-title text-white font-weight-bold ml-1">Capitulo 1</span>-->
+      <!--<div class="tile-play" style="display: none;">-->
+        <!--<button class="btn btn-outline-primary play-btn"><i class="fa fa-play"></i> Play</button>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="carousel-cell">-->
+    <!--<div class="carousel-tile" style="background-image: url('img/movies/1.jpg'); background-size: contain">-->
+      <!--<span class="tile-title card-title text-white font-weight-bold ml-1">Capitulo 1</span>-->
+      <!--<div class="tile-play" style="display: none;">-->
+        <!--<button class="btn btn-outline-primary play-btn"><i class="fa fa-play"></i> Play</button>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="carousel-cell">-->
+    <!--<div class="carousel-tile" style="background-image: url('img/movies/1.jpg'); background-size: contain">-->
+      <!--<span class="tile-title card-title text-white font-weight-bold ml-1">Capitulo 1</span>-->
+      <!--<div class="tile-play" style="display: none;">-->
+        <!--<button class="btn btn-outline-primary play-btn"><i class="fa fa-play"></i> Play</button>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="carousel-cell">-->
+    <!--<div class="carousel-tile" style="background-image: url('img/movies/1.jpg'); background-size: contain">-->
+      <!--<span class="tile-title card-title text-white font-weight-bold ml-1">Capitulo 1</span>-->
+      <!--<div class="tile-play" style="display: none;">-->
+        <!--<button class="btn btn-outline-primary play-btn"><i class="fa fa-play"></i> Play</button>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="carousel-cell">-->
+    <!--<div class="carousel-tile" style="background-image: url('img/movies/1.jpg'); background-size: contain">-->
+      <!--<span class="tile-title card-title text-white font-weight-bold ml-1">Capitulo 1</span>-->
+      <!--<div class="tile-play" style="display: none;">-->
+        <!--<button class="btn btn-outline-primary play-btn"><i class="fa fa-play"></i> Play</button>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="carousel-cell">-->
+    <!--<div class="carousel-tile" style="background-image: url('img/movies/1.jpg'); background-size: contain">-->
+      <!--<span class="tile-title card-title text-white font-weight-bold ml-1">Capitulo 1</span>-->
+      <!--<div class="tile-play" style="display: none;">-->
+        <!--<button class="btn btn-outline-primary play-btn"><i class="fa fa-play"></i> Play</button>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="carousel-cell">-->
+    <!--<div class="carousel-tile" style="background-image: url('img/movies/1.jpg'); background-size: contain">-->
+      <!--<span class="tile-title card-title text-white font-weight-bold ml-1">Capitulo 1</span>-->
+      <!--<div class="tile-play" style="display: none;">-->
+        <!--<button class="btn btn-outline-primary play-btn"><i class="fa fa-play"></i> Play</button>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<span *ngIf="last">{{initCarousel()}}</span>-->
+  <!--</div>-->
+<!--</div>-->
+
+<h6 *ngIf="show.chapters.length > 0" class="mt-4">{{show.name}}</h6>
+<div *ngIf="show.chapters.length > 0" class="main-carousel">
+  <div #chapterCells class="carousel-cell" *ngFor="let chapter of show.chapters; let last = last">
+    <div class="carousel-tile" [style.background-image]="getSanitizedImageUrl()" (mouseenter)="showPlay($event.target)" (mouseleave)="hidePlay($event.target)">
+      <span class="tile-title card-title text-white font-weight-bold ml-1">Capitulo {{chapter.number}}</span>
+      <div class="tile-play" style="display: none;">
+        <button class="btn btn-outline-primary play-btn" (click)="playChapter(chapter)"><i class="fa fa-play"></i> Play</button>
+      </div>
+    </div>
+    <!--<div *ngIf="last">{{initCarousel()}}</div>-->
+  </div>
+</div>

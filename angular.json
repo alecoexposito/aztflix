@@ -24,9 +24,24 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.css",
+              "src/assets/css/carousel.css",
+              "src/assets/css/flickity.min.css",
+              "src/assets/stellar-video/css/stellar.css",
+              "src/assets/stellar-video/css/stellar-font-awesome.css",
+              "src/assets/stellar-video/css/jquery.mCustomScrollbar.css",
+              "node_modules/@fortawesome/fontawesome-free/css/all.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "src/assets/js/flickity.pkgd.min.js",
+              "src/assets/stellar-video/js/jquery.mCustomScrollbar.js",
+              "src/assets/stellar-video/js/videoPlayer.js",
+              "src/assets/stellar-video/js/Playlist.js",
+              "src/assets/stellar-video/js/iphone-inline-video.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -89,9 +104,25 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.css",
+              "src/assets/css/carousel.css",
+              "src/assets/css/flickity.min.css",
+              "src/assets/stellar-video/css/stellar.css",
+              "src/assets/stellar-video/css/stellar-font-awesome.css",
+              "src/assets/stellar-video/css/jquery.mCustomScrollbar.css",
+              "node_modules/@fortawesome/fontawesome-free/css/all.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "src/assets/js/flickity.pkgd.min.js",
+              "src/assets/stellar-video/js/jquery.mCustomScrollbar.js",
+              "src/assets/stellar-video/js/videoPlayer.js",
+              "src/assets/stellar-video/js/Playlist.js",
+              "src/assets/stellar-video/js/iphone-inline-video.js"
+
+            ]
           }
         },
         "lint": {

@@ -1,0 +1,52 @@
+<app-aztflix-navbar></app-aztflix-navbar>
+<div class="container-fluid mt-5">
+  <div class="row">
+    <div class="col-10 offset-1">
+      <div class="card bg-dark text-white">
+        <div class="card-header">
+          <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 pt-2">Programas</div>
+            <div class="dropdown col-sm-12 col-md-6">
+              <!--<button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+                <!--TV Azteca-->
+              <!--</button>-->
+              <div class="dropdown-menu bg-secondary text-white" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">TV Azteca</a>
+                <a class="dropdown-item" href="#">Azteca Uno</a>
+                <a class="dropdown-item" href="#">Azteca 7</a>
+                <a class="dropdown-item" href="#">Deportes</a>
+                <a class="dropdown-item" href="#">Noticias</a>
+                <a class="dropdown-item" href="#">ADN 40</a>
+                <a class="dropdown-item" href="#">a+ 7.2</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+        <div class="card-body">
+          <div id="video-show" class="row mb-5" style="display: none;">
+            <div class="col-lg-12 col-md-12 m-0">
+              <div class="content">
+                <!--<video id="current-video" class="" preload="auto" src="{{currentVideo}}" controls style="max-width: 100%; max-height: 100%"></video>-->
+                <div id="video-id" style="max-width: 100%; max-height: 100%"></div>
+              </div>
+            </div>
+            <div class="col-lg-12 col-md-12 text-center m-0 mt-md-3">
+              <h2 id="show-name">{{currentShow.name}}</h2>
+              <p id="show-description" class="mx-3 mb-3 text-justify">{{currentShow.description}}</p>
+              <button type="button" class="btn btn-primary" style="display: none;" id="playButton"><i class="fa fa-play"></i> Play</button>
+              <!--<p class="mx-3 text-left alert-heading text-info"><span class="font-weight-bold">Ahora viendo: </span><span id="current-chapter">Capitulo {{currentChapter.number}}</span></p>-->
+              <!--<span><button id="prevChapter" class="btn btn-outline-primary" (click)="playPrev()"><i class="fa fa-step-backward"></i> Ver Anterior</button></span>-->
+              <!--<span><button id="nextChapter" class="btn btn-outline-primary" (click)="playNext()"><i class="fa fa-step-forward"></i> Ver Siguiente</button></span>-->
+            </div>
+          </div>
+          <div id="gallery-show" class="col-12 px-0">
+              <app-show-carousel *ngFor="let show of channel.shows; let last = last" [show]="show" (clickedPlay)="onPlayClicked($event)">
+              </app-show-carousel>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
