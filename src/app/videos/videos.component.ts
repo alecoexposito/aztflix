@@ -99,10 +99,10 @@ export class VideosComponent implements OnInit {
     console.log('playlist: ', playlist);
     var config = {
       playerLayout: 'fitToContainer',
-      playlistBehaviourOnPageload: 'closed',
+      // playlistBehaviourOnPageload: 'closed',
       // videoPlayerWidth: 768,
       // videoPlayerHeight: 432,
-      playlist: 'Bottom playlist',
+      playlist: 'Off',
       nowPlayingText: false,
       // autoplay: true,
       videos: playlist,
