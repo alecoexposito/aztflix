@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {AztflixService} from '../services/aztflix.service';
 
+declare var jQuery: any;
+
 @Component({
   selector: 'app-aztflix-navbar',
   templateUrl: './aztflix-navbar.component.html',
@@ -14,7 +16,15 @@ export class AztflixNavbarComponent implements OnInit {
   ngOnInit() {
     this.service.getChannelsIdAndName().subscribe((data: any) => {
       this.channels = data.info;
+      setTimeout(() => {
+        jQuery('.navbar-nav>li>a').on('click', function(){
+          jQuery('.navbar-collapse').collapse('hide');
+        })
+      }, 300);
     })
   }
 
+  collapseNavbar() {
+
+  }
 }
