@@ -163,6 +163,7 @@ export class VideosComponent implements OnInit {
       title: 'Capitulo ' + chapter.number,
       description: chapter.title,
       info: chapter.title,
+      mp4HD: this.uploadsUrl + 'videos/' + chapter.path,
       mp4SD: this.uploadsUrl + 'videos/' + chapter.path,
       thumbImg: this.uploadsUrl + 'shows/' + show.image,
       prerollAD: true,
