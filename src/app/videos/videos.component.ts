@@ -165,7 +165,7 @@ export class VideosComponent implements OnInit {
       info: chapter.title,
       // mp4HD: this.uploadsUrl + 'videos/' + chapter.path,
       mp4SD: this.uploadsUrl + 'videos/' + chapter.path,
-      thumbImg: this.uploadsUrl + 'shows/' + show.image,
+      // thumbImg: this.uploadsUrl + 'shows/' + show.image,
       prerollAD: true,
       preroll_mp4: this.uploadsUrl + 'ads/' + ads[0],
       prerollSkipTimer: 5,
