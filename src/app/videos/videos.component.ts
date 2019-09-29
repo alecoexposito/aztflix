@@ -83,11 +83,12 @@ export class VideosComponent implements OnInit {
     this.currentIndex = this.currentShow.chapters.indexOf(this.currentChapter);
     config = this.initVideo(this.currentShow, this.currentIndex);
     jQuery('#video-id').html('');
-    $(document.body).animate({
-      'scrollTop':   $('#video-show').offset().top
+    jQuery(document.body).animate({
+      'scrollTop':   jQuery('#video-show').offset().top
     }, 500);
 
     window['videoPlayer'] = this.playVideo(config);
+    window['videoPlayer'].play();
   }
 
   playVideo(config) {
@@ -104,7 +105,7 @@ export class VideosComponent implements OnInit {
       // videoPlayerHeight: 432,
       playlist: 'Off',
       nowPlayingText: false,
-      autoplay: true,
+      // autoplay: true,
       videos: playlist,
       playSpecificVideo: index,
       // HTML5VideoQuality: 'SD',
