@@ -86,7 +86,7 @@ export class VideosComponent implements OnInit {
     $(document.body).animate({
       'scrollTop':   $('#video-show').offset().top
     }, 500);
-    
+
     window['videoPlayer'] = this.playVideo(config);
   }
 
