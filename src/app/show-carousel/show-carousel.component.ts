@@ -48,7 +48,6 @@ export class ShowCarouselComponent implements OnInit {
     jQuery(elemRef).find('.tile-play').fadeOut();
   }
   playChapter(chapter) {
-    console.log("click en el show carousel");
     this.clickedPlay.emit({show: this.show, chapter});
   }
 }
