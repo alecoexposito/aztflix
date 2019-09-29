@@ -85,7 +85,7 @@ export class VideosComponent implements OnInit {
     // config.playSpecificVideo = currentIndex;
     jQuery('#video-id').html('');
     window['videoPlayer'] = this.playVideo(config);
-    // window['videoPlayer'].pla
+    window['videoPlayer'].play();
     // }
     // window['videoPlayer'].pause();
   }
@@ -165,7 +165,7 @@ export class VideosComponent implements OnInit {
       info: chapter.title,
       // mp4HD: this.uploadsUrl + 'videos/' + chapter.path,
       mp4SD: this.uploadsUrl + 'videos/' + chapter.path,
-      // thumbImg: this.uploadsUrl + 'shows/' + show.image,
+      thumbImg: this.uploadsUrl + 'shows/' + show.image,
       prerollAD: true,
       preroll_mp4: this.uploadsUrl + 'ads/' + ads[0],
       prerollSkipTimer: 5,
