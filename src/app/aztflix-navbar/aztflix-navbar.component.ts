@@ -19,9 +19,9 @@ export class AztflixNavbarComponent implements OnInit {
       setTimeout(() => {
         jQuery('.navbar-nav>li>a').on('click', function(){
           jQuery('.navbar-collapse').collapse('hide');
-        })
+        });
       }, 300);
-    })
+    });
   }
 
   collapseNavbar() {

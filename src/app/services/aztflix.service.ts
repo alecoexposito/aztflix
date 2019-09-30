@@ -37,7 +37,10 @@ export class AztflixService {
     return this.http.get(this.baseUrl + '/channels/all');
   }
   getChannelById(id): Observable<any> {
-    return this.http.get(this.baseUrl + '/channels/' + id);
+    if(id)
+      return this.http.get(this.baseUrl + '/channels/' + id);
+    else
+      return this.http.get(this.baseUrl + '/channels/' + 0);
   }
 
   getAds(): Observable<any> {

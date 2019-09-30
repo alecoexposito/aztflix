@@ -8,7 +8,7 @@ import {VideosComponent} from './videos/videos.component';
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
+    component: VideosComponent,
   },
   {
     path: 'video-test',

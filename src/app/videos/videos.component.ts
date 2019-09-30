@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {AztflixService, Chapter, Show} from '../services/aztflix.service';
+import {AztflixService, Channel, Chapter, Show} from '../services/aztflix.service';
 import {ActivatedRoute, ParamMap} from '@angular/router';
 import {config, Observable} from 'rxjs';
 import {switchMap} from 'rxjs/operators';
@@ -16,7 +16,7 @@ var videoPlayer;
 export class VideosComponent implements OnInit {
 
   channelObs$: Observable<any>;
-  channel: any = [];
+  channel: any = new Channel();
   currentShow: Show = new Show();
   currentChapter: any = null;
   currentVideo: '';
@@ -30,17 +30,6 @@ export class VideosComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('en el ngInit');
-    // const idChannel = this.route.snapshot.params.id;
-    // this.service.getChannelById(idChannel).subscribe((data: any) => {
-    //   var channel = data.data;
-    //   for (let i = 0; i < channel.shows.length; i++) {
-    //     channel.shows[i].chapters = this.orderChaptersByNumber(channel.shows[i]);
-    //   }
-    //   this.channel = channel;
-    //   this.initCarousel();
-    // });
-
     this.channelObs$ = this.route.paramMap.pipe(
       switchMap((params: ParamMap) =>
         this.service.getChannelById(params.get('id')))
